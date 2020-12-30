@@ -97,6 +97,7 @@ private:
 	int mark; //оценка, которую поставил пользователь с текущим отзывом
 public:
 	feedback();
+	~feedback();
 	property String^ Name
 	{
 		String^ get() {

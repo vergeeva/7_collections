@@ -31,3 +31,9 @@ feedback::feedback()
 	text = gcnew String("");
 	mark = 0;
 }
+
+feedback::~feedback()
+{
+	delete name;
+	delete text;
+}

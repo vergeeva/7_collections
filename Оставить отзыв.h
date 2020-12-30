@@ -301,9 +301,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 	if (comboBox1->Text != "" && richTextBox1->Text != "")
 	{
-		fb_temp->Name = gcnew String(comboBox1->Text);
-		fb_temp->Text = gcnew String(richTextBox1->Text);
-		fb->Add(fb_temp);
+		feedback^ fb_temp_1 = gcnew feedback(); //êàæäûé ğàç ïîğîæäàåì íîâûé îáúåêò, 
+										//÷òîáû ìîæíî áûëî äîáàâëÿòü ğàçíûå îòçûâû îäíîìó ïîëüçîâàòåëş
+		fb_temp_1->Name = gcnew String(comboBox1->Text);
+		fb_temp_1->Text = gcnew String(richTextBox1->Text);
+		fb_temp_1->Mark = fb_temp->Mark;
+		fb->Add(fb_temp_1);
 		Infile(fb, "Îòçûâû è îöåíêè.txt");
 		MessageBox::Show("Ñïàñèáî çà âàø îòçûâ!", "Áëàãîäàğíîñòü");
 	}
@@ -312,9 +315,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("Çàïîëíèòå íåîáõîäèìûå ïîëÿ!", "Ïğåäóïğåæäåíèå");
 	}
 }
-//private: System::Void radioButton6_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-//	fb_temp->Mark = 0;
-//}
+
 private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	fb_temp->Mark = 1;
 }

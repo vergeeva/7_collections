@@ -372,6 +372,7 @@ namespace My7collections {
 		}
 #pragma endregion
 	private: System::Void Меню_Load(System::Object^ sender, System::EventArgs^ e) {
+		//При загрузке формы
 		Load_food(food, "Menu.txt");
 		View(food, dataGridView1);
 		richTextBox1->Text = food[0]->About;
@@ -380,10 +381,12 @@ namespace My7collections {
 		textBox2->Text = Convert::ToString(sum_w(food_order));
 	}
 	private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		//Узнать описание о блюде
 		int i = e->RowIndex;
 		richTextBox1->Text = food[i]->About;
 	}
 	private: System::Void dataGridView1_CellDoubleClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		//Добавть в заказ
 		int i = e->RowIndex;
 		auto result = MessageBox::Show(
 			"Вы действительно хотите добавить блюдо в список?",
@@ -408,6 +411,7 @@ namespace My7collections {
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	//Удалить из заказа
 	int i = listBox1->SelectedIndex;
 	auto result = MessageBox::Show(
 		"Вы действительно хотите удалить блюдо из списка?",
@@ -424,13 +428,15 @@ private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, Syst
 	}
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Сделать заказ
 	List <dish^>^ food = gcnew List <dish^>;
 	Load_food(food, "Menu.txt");
 	Dictionary <String^, int>^ temp = gcnew Dictionary <String^, int>;
+	//С помощью словаря проще проверять на дубликаты
 	for (int i = 0; i < food_order->Count; i++)
 	{
 		int b = Count_el(food_order, food_order[i]);
-		myPredicate predicate(food_order[i]->Name);
+		myPredicate predicate(food_order[i]->Name); //Предикат
 		int j = food->FindIndex(gcnew Predicate <dish^>(predicate, &myPredicate::isName));
 
 		if (!temp->ContainsKey(food[j]->Name))
