@@ -123,12 +123,10 @@
     <ClCompile Include="Клиент.cpp" />
     <ClCompile Include="Меню.cpp" />
     <ClCompile Include="Оставить отзыв.cpp" />
-    <ClCompile Include="Оформить заказ.cpp" />
     <ClCompile Include="Ред_меню.cpp" />
-    <ClCompile Include="Статистика.cpp" />
-    <ClCompile Include="Управленец.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Function.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
@@ -142,16 +140,7 @@
     <ClInclude Include="Оставить отзыв.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Оформить заказ.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Ред_меню.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Статистика.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Управленец.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -173,17 +162,8 @@
     <EmbeddedResource Include="Оставить отзыв.resx">
       <DependentUpon>Оставить отзыв.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Оформить заказ.resx">
-      <DependentUpon>Оформить заказ.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Ред_меню.resx">
       <DependentUpon>Ред_меню.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Статистика.resx">
-      <DependentUpon>Статистика.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Управленец.resx">
-      <DependentUpon>Управленец.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

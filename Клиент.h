@@ -3,7 +3,6 @@ using namespace System::Collections::Generic;
 #include "Header.h"
 #include "Меню.h"
 #include "Оставить отзыв.h"
-#include "Оформить заказ.h"
 namespace My7collections {
 
 	using namespace System;
@@ -41,7 +40,7 @@ namespace My7collections {
 		}
 	private: System::Windows::Forms::Button^ button1;
 	protected:
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::Button^ button3;
 
 	private:
@@ -58,35 +57,26 @@ namespace My7collections {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(33, 64);
+			this->button1->Location = System::Drawing::Point(37, 59);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(210, 34);
+			this->button1->Size = System::Drawing::Size(237, 41);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Меню";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Клиент::button1_Click);
 			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(33, 115);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(210, 34);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Оформить заказ";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &Клиент::button2_Click);
-			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(33, 164);
+			this->button3->Location = System::Drawing::Point(37, 117);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(210, 34);
+			this->button3->Size = System::Drawing::Size(237, 41);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Оставить отзыв";
 			this->button3->UseVisualStyleBackColor = true;
@@ -94,12 +84,14 @@ namespace My7collections {
 			// 
 			// Клиент
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 19);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(293, 290);
+			this->ClientSize = System::Drawing::Size(325, 203);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Клиент";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Клиент";
@@ -109,10 +101,6 @@ namespace My7collections {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Form^ Frm = gcnew Меню();
-		Frm->ShowDialog();
-	}
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		Form^ Frm = gcnew Оформитьзаказ();
 		Frm->ShowDialog();
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
